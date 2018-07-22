@@ -18,17 +18,34 @@
           </button>
 
           <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item disabled">
                 <a class="nav-link disabled"<%= link_to "Home", home_path %></a>
+              </li>
+              <div id="container">
+                <div id="user_header">
                   <% if current_user %>
-                    Logged in as <%= current_user.email %>
+                  Logged in as <%= current_user.email %>
+                  <li class="nav-item">
                     <a class="nav-link disabled"<%= link_to "Loout", session_path("current"), method: "delete" %></a>
+                  </li>
+
                   <% else %>
-                    <a class="nav-link disabled"<%= link_to "Create Post", new_post_path %></a>
-                    <a class="nav-link disabled"<%= link_to "Register", new_user_path %></a>
-                    <a class="nav-link disabled"<%= link_to "Login", new_session_path %></a>
-                  <% end %>
+              <li class="nav-item">
+                <a class="nav-link disabled"<%= link_to "Create Post", new_post_path %></a>
+              </li>
+              <li class="nav-item" align="right">
+                <a class="nav-link disabled"<%= link_to "Register", new_user_path %></a>
+                <li class="nav-item" align="right">
+                  <a class="nav-link disabled"<%= link_to "Login", new_session_path %></a>
+                </li>
+              </li>
+              <% end %>
+            </div>
           </div>
-    </nav>
+            </ul>
+          </div>
+        </nav>
 <br>
 <br>
 <br>

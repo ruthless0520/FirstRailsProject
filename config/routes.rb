@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  resources :users
+  resources :sessions
+  
   root 'posts#index', as: 'home'
 
   get 'about' => 'pages#about', as: 'about'

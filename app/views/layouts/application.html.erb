@@ -21,9 +21,10 @@
                 <a class="nav-link disabled"<%= link_to "Home", home_path %></a>
                   <% if current_user %>
                     Logged in as <%= current_user.email %>
+					<a class="nav-link disabled"<%= link_to "Create Post", new_post_path %></a>
                     <a class="nav-link disabled"<%= link_to "Loout", session_path("current"), method: "delete" %></a>
                   <% else %>
-                    <a class="nav-link disabled"<%= link_to "Create Post", new_post_path %></a>
+
                     <a class="nav-link disabled"<%= link_to "Register", new_user_path %></a>
                     <a class="nav-link disabled"<%= link_to "Login", new_session_path %></a>
                   <% end %>
